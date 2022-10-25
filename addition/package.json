@@ -1,0 +1,17 @@
+{
+  "name": "info.androidsk.plugins.custon",
+  "version": "1.0.0",
+  "description": "addition of two integers",
+  "cordova": {
+    "id": "info.androidsk.plugins.custon",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Ratnadeep",
+  "license": "ISC"
+}

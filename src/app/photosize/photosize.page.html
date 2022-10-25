@@ -1,0 +1,48 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>photosize</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div   class="container">
+    <video autoplay="" id="video">Video stream not available.</video>
+    <!-- <video  autoplay=""></video> -->
+    <div class="overlay">
+        <div [style.width]="devicewidth" [style.height]="this.deviceheight" id="surfaceview">
+          <div [style.width]="this.deviceheightLW" [style.height]="this.deviceheight" id="left"></div>
+          <div [style.width]="devicewidth" [style.height]="this.deviceheightLH" id="top">
+            <p style="color:white;">
+              {{this.getusermedialocalstreamwidth}}x{{this.getusermedialocalstreamheight}}
+            </p>
+          </div>
+          <div [style.width]="this.deviceheightLW" [style.height]="this.deviceheightRW" id="right"></div>
+          <div [style.width]="devicewidth" [style.height]="this.deviceheightLH" id="bottom">
+            <div style=" color:white;">
+              <canvas id="canvas"> </canvas>
+              <div>
+                <ion-row>
+                  <ion-col><h1 (click)="takepicture()">capture</h1></ion-col>
+                  <ion-col><h1 (click)="clearphoto()">clear</h1></ion-col>
+                </ion-row>
+                <ion-row>
+                <!-- <img id="photo" alt="The screen capture will appear in this box." /> -->
+                </ion-row>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div style="float:right; width:70px; height:1000px; opacity:0.5; background-color:whitesmoke;"></div> -->
+    </div>
+</div>
+  <!-- <video  autoplay=""></video>
+  <!-- <input type="range" min="640" max="640" step="1"> -->
+  <!-- <button id="takePhotoButton">Take Photo</button> -->
+  <!-- <canvas></canvas>  -->
+  <!-- <h3>Live Output</h3>
+<div id="output" class="output">
+  <div id="content"></div>
+  <div id="status"></div>
+  <pre id="log"></pre>
+</div> -->
+</ion-content>

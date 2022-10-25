@@ -1,0 +1,64 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <!-- <button style="width:50%; height:60px;" (click)="camcall()">cam</button>
+      <button style="width:50%; height:60px;" (click)="onTakePhotoButtonClick()">snap</button> -->
+    <!-- </ion-title>
+  </ion-toolbar>
+</ion-header> --> 
+
+<ion-content>
+  <div   class="container">
+    <!--[style.width]="this.devicewidth" [style.height]="this.deviceheight"-->
+    <video  autoplay="" id="video"  >Video stream not available.</video>
+    <div class="overlay">
+        <div [style.width]="devicewidth" [style.height]="this.deviceheight" id="surfaceview">
+          <div [style.width]="device_left_right_width" [style.height]="this.deviceheight" id="left">
+            <p style="color:white; top:0; font-size:8px;">
+              {{this.getusermedialocalstreamwidth}}x{{this.getusermedialocalstreamheight}}
+            </p>
+          </div>
+          <div [style.width]="this.device_top_bottom_width" [style.height]="device_top_bottom_height" id="top">
+          </div>
+          <div [style.width]="device_left_right_width" [style.height]="this.deviceheight" id="right"></div>
+          <div [style.width]="this.device_top_bottom_width" [style.height]="device_top_bottom_height" id="bottom">
+            <div style=" color:white;">
+             <ion-row>
+              <ion-col size="4">
+                <div id="capturedot" (click)="clickstillphoto(1)">1</div>
+              </ion-col>
+              <ion-col size="4">
+                <div id="capturedot" (click)="clickstillphoto(2)">2</div>
+              </ion-col>
+              <ion-col size="4">
+                <div id="capturedot" (click)="clickstillphoto(3)">3</div>
+              </ion-col>
+             </ion-row> 
+             <ion-row>
+              <ion-col size="4">
+                <div id="capturedot" (click)="clickstillphoto(4)">4</div>
+              </ion-col>
+              <ion-col size="4">
+                <div id="capturedot" (click)="clickstillphoto(5)">5</div>
+              </ion-col>
+              <ion-col size="4">
+                <div id="capturedot" (click)="clickstillphoto(6)">6</div>
+              </ion-col>
+             </ion-row>       
+            </div>
+          </div>
+        </div>
+        <!-- <div style="float:right; width:70px; height:1000px; opacity:0.5; background-color:whitesmoke;"></div> -->
+    </div>
+</div>
+  <!-- <div>
+    <video id="video" autoplay=""></video>
+    <!-- <input type="range"> -->
+    <!-- <button id="takePhotoButton" disabled="">Take Photo</button> -->
+    <!-- <canvas></canvas> -->
+  <!-- </div> --> 
+  <!-- <h3>Live Output</h3> -->
+<!-- <div id="output" class="output"></div>  -->
+<!-- <div id="showimg"></div> -->
+<!-- <img id="bscsrc" style="width:400px; height:600px;" src=""> -->
+</ion-content>

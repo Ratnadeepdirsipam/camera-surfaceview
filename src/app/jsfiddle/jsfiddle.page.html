@@ -1,0 +1,48 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <button (click)="start()">start</button>
+      <button (click)="stop()">stop</button>
+      <button (click)="capture(1)">capture</button>
+        <button (click)="capture(2)">capture</button>
+        <button (click)=" know_width_height()"> know_width_height</button>
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <!-- <video id="videoLocal" autoplay width=442 height=882 ></video> -->
+  <!-- <video id="video" autoplay ></video> -->
+  
+  <div   class="container">
+    <!--[style.width]="this.devicewidth" [style.height]="this.deviceheight"-->
+    <video  autoplay="" id="video"  >Video stream not available.</video>
+    <div class="overlay">
+        <div [style.width]="devicewidth" [style.height]="this.deviceheight" id="surfaceview">
+          <div [style.width]="device_left_right_width" [style.height]="this.deviceheight" id="left">
+            <p style="color:white; top:0; font-size:8px;">
+              {{this.getusermedialocalstreamwidth}}x{{this.getusermedialocalstreamheight}}
+            </p>
+          </div>
+          <div [style.width]="this.device_top_bottom_width" [style.height]="device_top_bottom_height" id="top">
+          </div>
+          <div [style.width]="device_left_right_width" [style.height]="this.deviceheight" id="right"></div>
+          <div [style.width]="this.device_top_bottom_width" [style.height]="device_top_bottom_height" id="bottom">
+            <div style=" color:white;">
+             <ion-row>
+              <ion-col size="4">
+              </ion-col>
+              <ion-col size="4">
+                <div id="capturedot" (click)="capture(1)"></div>
+              </ion-col>
+              <ion-col size="4">
+              </ion-col>
+             </ion-row> 
+                
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+  
+</ion-content>

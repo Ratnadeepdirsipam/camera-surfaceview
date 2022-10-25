@@ -1,0 +1,166 @@
+ <link rel="stylesheet" href="css/cropper.min.css"/> 
+<link rel="stylesheet"href="css/bootstrap.min.css"/>
+
+
+
+<script src="javascript/cropper.min.js"></script>
+
+<style>
+  .page {
+    margin: 1em auto;
+    max-width: 768px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+
+  .box {
+    padding: 0.5em;
+    width: 100%;
+    margin: 0.5em;
+  }
+
+  .box-2 {
+    padding: 0.5em;
+    width: calc(100% / 2 - 1em);
+  }
+
+  .options label,
+  .options input {
+    width: 4em;
+    padding: 0.5em 1em;
+  }
+  .btn {
+    background: white;
+    color: black;
+    border: 1px solid black;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    margin: 0.8em 0.3em;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  img {
+    max-width: 100%;
+  }
+</style>
+
+<body>
+  <div class="container page">
+    <!-- <h1 class="text-center">Crop Image Online</h1>
+    <div class="form-group container">
+      <label for="file">Upload Image File:</label> -->
+      <input class="form-control box" accept="image/*" type="file" required id="file-input" />
+    <!-- </div> -->
+    <button onclick="callcropimg()">call crop</button>
+    <div class="box-2">
+      <div class="result"></div>
+    </div>
+    <!--rightbox-->
+    <div class="box-2 img-result hide">
+      <!-- result of crop -->
+      <img class="cropped" src="" alt="" />
+    </div>
+    <!-- input file -->
+    <div class="box">
+      <div class="options hide">
+        <label> Width</label>
+        <input type="number" class="img-w" value="300" min="100" max="1200" />
+      </div>
+      <!-- save btn -->
+      <button class="btn save hide">Save</button>
+      <!-- download btn -->
+      <a href="" class="btn download hide">Download</a>
+    </div>
+  </div>
+</body>
+
+<script>
+          let bsf = "data:image/jpeg;base64,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"
+    //https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.js
+  // vars
+  let result = document.querySelector(".result"),
+    img_result = document.querySelector(".img-result"),
+    img_w = document.querySelector(".img-w"),
+    img_h = document.querySelector(".img-h"),
+    options = document.querySelector(".options"),
+    save = document.querySelector(".save"),
+    cropped = document.querySelector(".cropped"),
+    dwn = document.querySelector(".download"),
+    upload = document.querySelector("#file-input"),
+    cropper = "";
+
+  // on change show image with crop options
+  upload.addEventListener("change", (e) => {
+    if (e.target.files.length) {
+      // start file reader
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        if (e.target.result) {
+          // create new image
+          let img = document.createElement("img");
+          img.id = "image";
+          img.src = e.target.result;
+          
+          //console.log(img.src)
+          // clean result before
+          result.innerHTML = "";
+          // append new image
+          result.appendChild(img);
+          // show save btn and options
+          save.classList.remove("hide");
+          options.classList.remove("hide");
+          // init cropper
+          //console.log(img)
+          cropper = new Cropper(img);
+        }
+      };
+
+
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  });
+
+  function callcropimg()
+  {
+    // create new image
+    let img = document.createElement("img");
+    img.id = "image";
+    img.src = bsf//e.target.result;
+    //console.log(img.src)
+    // clean result before
+    result.innerHTML = "";
+    // append new image
+    result.appendChild(img);
+    // show save btn and options
+    save.classList.remove("hide");
+    options.classList.remove("hide");
+    // init cropper
+    //console.log(img)
+    cropper = new Cropper(img);
+  }
+  // save on click
+  save.addEventListener("click", (e) => {
+    e.preventDefault();
+    // get result to data uri
+    let imgSrc = cropper
+      .getCroppedCanvas({
+        width: img_w.value, // input value
+      })
+      .toDataURL();
+    // remove hide class of img
+    cropped.classList.remove("hide");
+    img_result.classList.remove("hide");
+    // show image cropped
+    cropped.src = imgSrc;
+    dwn.classList.remove("hide");
+    dwn.download = "imagename.png";
+    dwn.setAttribute("href", imgSrc);
+  });
+</script>

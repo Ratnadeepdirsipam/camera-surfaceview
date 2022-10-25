@@ -1,0 +1,57 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>cameracapture</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  
+  <div   class="container">
+    <video autoplay="" id="video">Video stream not available.</video>
+    <div class="overlay">
+        <div [style.width]="devicewidth" [style.height]="this.deviceheight" id="surfaceview">
+          <div [style.width]="this.deviceheightLW" [style.height]="this.deviceheight" id="left"></div>
+          <div [style.width]="devicewidth" [style.height]="this.deviceheightLH" id="top">
+            <p style="color:white;">
+              {{this.getusermedialocalstreamwidth}}x{{this.getusermedialocalstreamheight}}
+            </p>
+          </div>
+          <div [style.width]="this.deviceheightLW" [style.height]="this.deviceheightRW" id="right"></div>
+          <div [style.width]="devicewidth" [style.height]="this.deviceheightLH" id="bottom">
+            <div style=" color:white;">
+              <canvas id="canvas"> </canvas>
+              <div>
+                <ion-row>
+                  <ion-col><h1 (click)="takepicture()">capture</h1></ion-col>
+                  <ion-col><h1 (click)="clearphoto()">clear</h1></ion-col>
+                </ion-row>
+                <ion-row>
+                <!-- <img id="photo" alt="The screen capture will appear in this box." /> -->
+                </ion-row>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div style="float:right; width:70px; height:1000px; opacity:0.5; background-color:whitesmoke;"></div> -->
+    </div>
+</div>
+<!-- <div *ngIf="!campreview">
+  <img id="photo" alt="The screen capture will appear in this box." />
+</div> -->
+  <!-- <div class="camera-preview">
+    <video height="600" id="video">Video stream not available.</video>
+   
+  </div> -->
+  <!-- <div class="contentarea">
+    <button style="height:80px;" (click)="startup()">start camera</button><br>
+    <div class="camera">
+      <video id="video">Video stream not available.</video>
+      <button id="startbutton">Take photo</button>
+    </div><br>
+    <canvas id="canvas"> </canvas>
+    <div class="output">
+      <img id="photo" alt="The screen capture will appear in this box." />
+    </div>
+    
+  </div> -->
+</ion-content>

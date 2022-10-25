@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cropinjs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div>
+  <!--10, 10,200, 175, 0, 0, 100, 175-->
+  <img id="myImage" src=""
+		alt="GeeksForGeeks">
+  <canvas id="myCanvas" width="500" height="200"
+		style="border:3px solid">
+		HTML5 canvas tag is not
+		supported by your browser.
+	</canvas>
+  <input value="10" #sx><input value="10" #sy><input value="200" #swidth><input value="175" #sheight>
+  <input value="0" #x><input value="0" #y><input value="100" #width><input value="175" #height>
+  <button (click)="cropanimage(sx.value,sy.value,swidth.value,sheight.value,x.value,y.value,width.value,height.value)">crop</button>
+</div>
+<div>
+  <!-- <img style="width:400px; height:400px;" id="thisimagepreview" src=""> -->
+</div>
+<!-- <div>
+  img	Specifies the image, canvas, or video element to use	<br> 
+  sx	Optional. The x coordinate where to start clipping	<br>
+  sy	Optional. The y coordinate where to start clipping	<br>
+  swidth	Optional. The width of the clipped image	<br>
+  sheight	Optional. The height of the clipped image	<br>
+  x	The x coordinate where to place the image on the canvas	<br>
+  y	The y coordinate where to place the image on the canvas	<br>
+  width	Optional. The width of the image to use (stretch or reduce the image)	<br>
+  height	Optional. The height of the image to use (stretch or reduce the image)
+</div> -->
+</ion-content>

@@ -1,0 +1,108 @@
+// #videoLocal
+// {
+//     width:100%;
+//     height:100%;
+// }
+//deepu
+.camera-preview
+{
+  width:100%;
+  height:100%;
+  border:1px dotted red;
+}
+
+.container { 
+  position:relative; 
+  width:100%;
+  height:100%;
+  border:1px dotted red;
+}
+.container video {
+  position:relative;
+  // z-index:0;
+  width: 100%;
+  height: 100%;
+  //-------
+  // height: calc(100% + 2px);
+  //   left: -1px;
+  //   pointer-events: none;
+  //   position: absolute;
+  //   top: -1px;
+  //   width: calc(100% + 2px);
+    //----
+  object-fit: cover;
+  z-index: -100;
+}
+.overlay {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:1;
+}
+#surfaceview{
+position:relative;
+z-index:-1;
+}
+#left{
+ float:left;
+ opacity:0.3;
+ background-color:black;
+  
+}
+#top{
+float:top;
+opacity:0.3;
+background-color:black;
+position:absolute;
+  top:0;
+  left:0;
+  z-index:1;
+}
+#right{
+float:right;
+opacity:0.3;
+ background-color:black;
+}
+#bottom{
+opacity:0.3;
+background-color:black;
+ position:absolute;
+ text-align: bottom;
+ float:bottom;
+  bottom:0;
+  left:0;
+  z-index:1;
+}
+
+#capturedot
+{
+  opacity:5;
+  // margin-top:10px;
+  width:70px;
+  height:70px;
+  text-align:center;
+  border:1px solid white;
+  border-radius: 100px;
+  background-color:cadetblue;
+}
+
+#aftercapturenext
+{
+  color:white;
+  text-align:center;
+  margin-top:25px;
+}
+
+#center-image
+{
+  border:2px solid red;
+  width:200px;
+  height:200px;
+}
+
+#center-image-op
+{
+  border:2px solid red;
+  width:200px;
+  height:200px;
+}

@@ -1,0 +1,61 @@
+.camera-preview
+  {
+    width:100%;
+    height:100%;
+    border:1px dotted red;
+  }
+
+.container { 
+    position:relative; 
+    width:100%;
+    height:100%;
+    border:1px dotted red;
+}
+.container video {
+    position:relative;
+    // z-index:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -100;
+}
+.overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+}
+#surfaceview{
+  position:relative;
+  z-index:-1;
+}
+#left{
+  float:left;
+   opacity:0.3;
+   background-color:black;
+    
+}
+#top{
+  float:top;
+  opacity:0.3;
+  background-color:black;
+  position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+}
+#right{
+  float:right;
+  opacity:0.3;
+   background-color:black;
+}
+#bottom{
+  opacity:0.3;
+  background-color:black;
+   position:absolute;
+   text-align: bottom;
+   float:bottom;
+    bottom:0;
+    left:0;
+    z-index:1;
+}
